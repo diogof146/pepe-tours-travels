@@ -118,20 +118,27 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// contact stuff
-document.getElementById('email-section').addEventListener('click', function() {
-  window.location.href = 'mailto:Pepeprivatetours@gmail.com';
-});
+// Contact functionality
+const emailSection = document.getElementById('email-section');
+if (emailSection) {
+  emailSection.addEventListener('click', function() {
+    window.location.href = 'mailto:Pepeprivatetours@gmail.com';
+  });
+}
 
-document.getElementById('visit-us-section').addEventListener('click', function() {
-  const address = "Rua Luís Vaz de Camões, 55 Mindelo";
-  const encodedAddress = encodeURIComponent(address);
-  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
-  window.open(googleMapsUrl, '_blank');
+const visitUsSection = document.getElementById('visit-us-section');
+if (visitUsSection) {
+  visitUsSection.addEventListener('click', function() {
+    const address = "Rua Luís Vaz de Camões, 55 Mindelo";
+    const encodedAddress = encodeURIComponent(address);
+    const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
+    window.open(googleMapsUrl, '_blank');
+  });
+}
 
-});
-
-document.getElementById('tour-inquiry-section').addEventListener('click', function() {
-  window.location.href = 'mailto:Pepeprivatetours@gmail.com?subject=Tour Inquiry&body=Hello! I\'m interested in learning more about your Portugal tours. Please send me more information.';
-});
-
+const tourInquirySection = document.getElementById('tour-inquiry-section');
+if (tourInquirySection) {
+  tourInquirySection.addEventListener('click', function() {
+    window.location.href = 'mailto:Pepeprivatetours@gmail.com?subject=Tour Inquiry&body=Hello! I\'m interested in learning more about your Portugal tours. Please send me more information.';
+  });
+}
