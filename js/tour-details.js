@@ -400,13 +400,13 @@ function loadTourContent() {
             <div class="col-lg-6">
               <div class="bg-faded rounded p-4 h-100">
                 <h4 class="mb-3 text-center">Tour Details</h4>
-                <div class="mb-3">
-                  <h6 class="mb-2">Duration</h6>
-                  <p class="mb-3">${tour.duration}</p>
+                <div class="mb-3 ps-3">
+                  <h6 class="mb-2"><strong>Duration</strong></h6>
+                  <p class="mb-3 ps-2">${tour.duration}</p>
                 </div>
-                <div>
-                  <h6 class="mb-2">Includes</h6>
-                  <ul class="mb-0">
+                <div class="ps-3">
+                  <h6 class="mb-2"><strong>Includes</strong></h6>
+                  <ul class="mb-0 ps-2">
                     ${tour.includes.map(item => `<li>${item}</li>`).join('')}
                   </ul>
                 </div>
