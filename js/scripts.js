@@ -18,10 +18,15 @@ document.addEventListener('DOMContentLoaded', function() {
     threshold: 0.1
   });
 
-  // Fullscreen functionality 
+  // Fullscreen functionality
   document.querySelectorAll('.video-container').forEach(container => {
-    container.addEventListener('click', () => toggleFullscreen(container));
+    container.addEventListener('click', () => {
+      const video = container.querySelector('video');
+      toggleFullscreen(video);
+    });
   });
+
+  // Listen for fullscreen changes and restore video state when exiting
   document.addEventListener('fullscreenchange', () => {
     if (!document.fullscreenElement) {
       document.querySelectorAll('.video-container video').forEach(video => {
@@ -33,28 +38,26 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   });
-  function toggleFullscreen(container) {
-    const video = container.querySelector('video');
+
+  function toggleFullscreen(video) {
     const wasPlaying = !video.paused;
+
     if (document.fullscreenElement) {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      }
+      // Exit fullscreen
+      document.exitFullscreen();
     } else {
-      if (container.requestFullscreen) {
-        container.requestFullscreen();
-      }
-      video.muted = false;
-      video.controls = true;
+      // Enter fullscreen on video element
+      video.requestFullscreen().then(() => {
+        video.muted = false;
+        video.controls = true;
+        if (wasPlaying && video.paused) {
+          video.play();
+        }
+      });
     }
-    setTimeout(() => {
-      if (wasPlaying && video.paused) {
-        video.play();
-      }
-    }, 100);
   }
 
-  // Slider functionality 
+  // Video slider functionality
   document.querySelectorAll('.video-slider').forEach(slider => {
     const slides = slider.querySelector('.slides');
     const prevBtn = slider.querySelector('.prev-btn');
@@ -64,9 +67,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const slideCount = slideElements.length;
     let currentSlide = 0;
     let isChangingSlide = false;
-    // Clear any existing pagination
+
+    // Clear existing pagination dots
     pagination.innerHTML = '';
-    // Only create pagination if there's more than one slide
+
+    // Only create navigation if there are multiple slides
     if (slideCount > 1) {
       // Create pagination dots
       for (let i = 0; i < slideCount; i++) {
@@ -77,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
         pagination.appendChild(dot);
       }
 
-      // Navigation functions
       function goToSlide(index) {
         if (isChangingSlide) return;
 
@@ -86,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
         slides.style.transform = `translateX(-${currentSlide * 100}%)`;
         updatePagination();
 
-        // Load current slide video if it has data-src
+        // Lazy load the current slide's video if needed
         const currentSlideElement = slideElements[currentSlide];
         const currentVideo = currentSlideElement.querySelector('video[data-src]');
         if (currentVideo) {
@@ -105,16 +109,17 @@ document.addEventListener('DOMContentLoaded', function() {
           dot.classList.toggle('active', i === currentSlide);
         });
       }
-      // Button events
+
+      // Previous and next button handlers
       prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
       nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
     } else {
-      // Hide navigation if only one slide
+
+      // Hide navigation elements if only one slide
       prevBtn.style.display = 'none';
       nextBtn.style.display = 'none';
       pagination.style.display = 'none';
     }
-
   });
 });
 
@@ -136,9 +141,9 @@ if (visitUsSection) {
   });
 }
 
-const tourInquirySection = document.getElementById('tour-inquiry-section');
-if (tourInquirySection) {
-  tourInquirySection.addEventListener('click', function() {
-    window.location.href = 'mailto:Pepeprivatetours@gmail.com?subject=Tour Inquiry&body=Hello! I\'m interested in learning more about your Portugal tours. Please send me more information.';
+const whatsappSection = document.getElementById('whatsapp-section');
+if (whatsappSection) {
+  whatsappSection.addEventListener('click', function() {
+    window.open('https://wa.me/351912966363?call=true');
   });
 }
