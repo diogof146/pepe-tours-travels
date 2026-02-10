@@ -21,7 +21,7 @@ const tourData = {
       'Commercial area of Santa Catarina'
     ],
     duration: 'Full Day (8 hours)',
-    includes: ['Professional guide', 'Port wine tastings', 'Monument entries', 'Traditional lunch'],
+    includes: ['Professional Guide', 'Port wine tasting with guided visit', 'Hour long boat ride', 'Luxury Mercebes Car or Van'],
     pricing: {
       2: { low: '412', high: '459' },
       3: { low: '460', high: '511' },
@@ -50,7 +50,7 @@ const tourData = {
       'Traditional regional lunch with valley views',
     ],
     duration: 'Full Day (8 hours)',
-    includes: ['Professional guide', 'Wine tastings at 2 quintas', 'River cruise', 'Regional lunch', 'Transportation'],
+    includes: ['Professional guide', 'Wine tastings', 'Hour long River cruise', 'Luxury Vehicle'],
     pricing: {
       2: { low: '506', high: '563' },
       3: { low: '575', high: '639' },
@@ -75,11 +75,10 @@ const tourData = {
       'Bom Jesus do Monte UNESCO site with panoramic views',
       'Braga\'s historic cathedral and charming old town',
       'Guimarães Castle and Palace of the Dukes of Braganza',
-      'Medieval streets where Portugal was born',
-      'Traditional northern Portuguese cuisine'
+      'Medieval streets where Portugal was born'
     ],
     duration: 'Full Day (8 hours)',
-    includes: ['Professional guide', 'Transportation', 'Monument entries'],
+    includes: ['Professional guide', 'Castel of Guimarães', 'Bom Jesus in Braga', 'Old Sé Cathedral in Braga'],
     pricing: {
       2: { low: '385', high: '428' },
       3: { low: '407', high: '452' },
@@ -100,14 +99,14 @@ const tourData = {
     ],
     description: 'Discover the unique Vinho Verde region, home to Portugal\'s most refreshing wines. Visit family-owned quintas nestled in lush valleys, taste crisp whites and light reds, and learn about traditional winemaking methods passed down through generations.',
     highlights: [
-      'Visit to 2-3 traditional Vinho Verde producers',
+      'Visit to 2 traditional Vinho Verde producers',
       'Guided wine tastings with local varietals',
       'Scenic drive through vineyard landscapes',
       'Meet passionate local winemakers',
       'Traditional regional lunch paired with wines'
     ],
     duration: 'Full Day (8 hours)',
-    includes: ['Wine tastings', 'Cellar visits', 'Regional lunch', 'Transportation'],
+    includes: ['Wine tastings', 'Cellar visits', 'Transportation'],
     pricing: {
       2: { low: '556', high: '618' },
       3: { low: '654', high: '727' },
@@ -136,7 +135,16 @@ const tourData = {
       'Breathtaking mountain panoramas'
     ],
     duration: 'Full Day (8 hours)',
-    includes: ['Nature guide', 'Park entrance', 'Traditional lunch']
+    includes: ['Hiking Expert Local Guide', 'Nature guide', 'Park entrance', 'Traditional lunch'],
+    pricing: {
+      2: { low: '556', high: '618' },
+      3: { low: '654', high: '727' },
+      4: { low: '792', high: '881' },
+      5: { low: '887', high: '986' },
+      6: { low: '981', high: '1091' },
+      7: { low: '1076', high: '1196' },
+      8: 'contact'
+    }
   },
   'santiago-compostela': {
     title: 'Santiago de Compostela',
@@ -155,7 +163,7 @@ const tourData = {
       'Santiago\'s vibrant university atmosphere'
     ],
     duration: 'Full Day (8 hours)',
-    includes: ['Border crossing assistance', 'Cathedral visit', 'Historic center tour', 'Traditional lunch']
+    includes: ['Cathedral visit', 'Historic center tour', 'Local Tortilha and a drink', 'Cathedral entrance']
   },
   'coimbra-aveiro': {
     title: 'Coimbra Aveiro Tour',
@@ -256,14 +264,14 @@ const tourData = {
       'Two UNESCO World Heritage sites in one day'
     ],
     duration: 'Full Day (8 hours)',
-    includes: ['UNESCO sites guided tours', 'Monument entries', 'Transportation', 'Professional guide'],
+    includes: ['Joaninha Bookstore', 'Templar Covenent', 'Monument entries', 'Transportation', 'Professional guide'],
     pricing: {
-      2: { low: '444', high: '493' },
-      3: { low: '455', high: '506' },
-      4: { low: '490', high: '545' },
-      5: { low: '494', high: '549' },
-      6: { low: '498', high: '554' },
-      7: { low: '502', high: '558' },
+      2: { low: '506', high: '563' },
+      3: { low: '575', high: '639' },
+      4: { low: '678', high: '754' },
+      5: { low: '743', high: '826' },
+      6: { low: '808', high: '898' },
+      7: { low: '871', high: '968' },
       8: 'contact'
     }
   },
@@ -286,7 +294,16 @@ const tourData = {
       'Traditional Minho architecture and crafts'
     ],
     duration: 'Full Day (8 hours)',
-    includes: ['Three historic towns tour', 'Traditional craft demonstrations', 'Transportation', 'Local guide']
+    includes: ['Three historic towns tour', 'Traditional craft demonstrations', 'Transportation', 'Local guide'],
+    pricing: {
+      2: { low: '444', high: '493' },
+      3: { low: '455', high: '506' },
+      4: { low: '490', high: '545' },
+      5: { low: '494', high: '549' },
+      6: { low: '498', high: '554' },
+      7: { low: '502', high: '558' },
+      8: 'contact'
+    }
   },
   'porto-half-day': {
     title: 'Porto Half Day',
@@ -396,7 +413,7 @@ function loadTourContent() {
                 </ul>
               </div>
             </div>
-            
+
             <div class="col-lg-6">
               <div class="bg-faded rounded p-4 h-100">
                 <h4 class="mb-3 text-center">Tour Details</h4>
@@ -523,3 +540,5 @@ function initializeImageSlider() {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', loadTourContent);
+
+
