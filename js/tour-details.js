@@ -163,7 +163,16 @@ const tourData = {
       'Santiago\'s vibrant university atmosphere'
     ],
     duration: 'Full Day (8 hours)',
-    includes: ['Cathedral visit', 'Historic center tour', 'Local Tortilha and a drink', 'Cathedral entrance']
+    includes: ['Cathedral visit', 'Historic center tour', 'Local Tortilha and a drink', 'Cathedral entrance'],
+    pricing: {
+      2: { low: '556', high: '618' },
+      3: { low: '654', high: '727' },
+      4: { low: '792', high: '881' },
+      5: { low: '887', high: '986' },
+      6: { low: '981', high: '1091' },
+      7: { low: '1076', high: '1196' },
+      8: 'contact'
+    }
   },
   'coimbra-aveiro': {
     title: 'Coimbra Aveiro Tour',
@@ -215,17 +224,17 @@ const tourData = {
     duration: 'Half Day (4-5 hours)',
     includes: ['Religious sites tour', 'Transportation', 'Professional guide'],
     pricing: {
-      2: { low: '300', high: '334' },
-      3: { low: '309', high: '344' },
-      4: { low: '333', high: '371' },
-      5: { low: '337', high: '375' },
-      6: { low: '341', high: '379' },
-      7: { low: '345', high: '384' },
+      2: { low: '556', high: '618' },
+      3: { low: '654', high: '727' },
+      4: { low: '792', high: '881' },
+      5: { low: '887', high: '986' },
+      6: { low: '981', high: '1091' },
+      7: { low: '1076', high: '1196' },
       8: 'contact'
     }
   },
   'porto-lisboa': {
-    title: 'Porto Lisboa Tour',
+    title: 'Transfer Porto Lisboa',
     subtitle: 'Grand Tour of Portugal\'s Capitals',
     images: [
       'assets/img/portolisboa1.jpg',
@@ -235,16 +244,16 @@ const tourData = {
       'assets/img/portocity1.jpg',
       'assets/img/portocity3.jpg'
     ],
-    description: 'A comprehensive journey connecting Portugal\'s two magnificent cities. Experience Porto\'s authentic charm and port wine culture, then discover Lisbon\'s cosmopolitan energy and Fado soul. This multi-day adventure showcases the best of Portuguese culture, history, and gastronomy.',
-    highlights: [
-      'Complete Porto and Lisbon city experiences',
-      'Port wine cellars and Fado houses',
-      'UNESCO World Heritage sites in both cities',
-      'Traditional markets and local cuisine',
-      'Scenic route through central Portugal'
-    ],
-    duration: 'Multi-Day (3-5 days)',
-    includes: ['Accommodation options', 'All transportation', 'Professional guides', 'Key monument entries']
+    description: 'Transfer Porto-Lisboa or Lisboa-Porto with 2 or 3 stops.',
+    pricing: {
+      2: { low: '600', high: '600' },
+      3: { low: '600', high: '600' },
+      4: { low: '700', high: '700' },
+      5: { low: '700', high: '700' },
+      6: { low: '700', high: '700' },
+      7: { low: '700', high: '700' },
+      8: 'contact'
+    }
   },
   'tomar-coimbra': {
     title: 'Tomar Coimbra',
@@ -264,7 +273,7 @@ const tourData = {
       'Two UNESCO World Heritage sites in one day'
     ],
     duration: 'Full Day (8 hours)',
-    includes: ['Joaninha Bookstore', 'Templar Covenent', 'Monument entries', 'Transportation', 'Professional guide'],
+    includes: ['Joanina Bookstore', 'Templar Convent', 'Monument entries', 'Transportation', 'Professional guide'],
     pricing: {
       2: { low: '506', high: '563' },
       3: { low: '575', high: '639' },
@@ -294,7 +303,7 @@ const tourData = {
       'Traditional Minho architecture and crafts'
     ],
     duration: 'Full Day (8 hours)',
-    includes: ['Three historic towns tour', 'Traditional craft demonstrations', 'Transportation', 'Local guide'],
+    includes: ['Traditional Lunch', 'Three historic towns tour', 'Traditional craft demonstrations', 'Transportation', 'Local guide'],
     pricing: {
       2: { low: '444', high: '493' },
       3: { low: '455', high: '506' },
